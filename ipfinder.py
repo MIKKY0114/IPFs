@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(message)s")
 
 @app.route('/')
 def track_ip():
-    ip = request.remote_addr
+    ip = request.headers.get('X-Forwarded-For', request.remote_addr)
     user_agent = request.headers.get('User-Agent')
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
@@ -22,3 +22,4 @@ def track_ip():
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
