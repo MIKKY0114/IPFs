@@ -18,7 +18,7 @@ def track_ip():
     # Log details in Heroku logs
     logging.info(f"IP Address: {ip} | User Agent: {user_agent} | Timestamp: {timestamp}")
 
-    return "Tracking successful! Redirecting...", 302, {"Location": "https://www.google.com/"}
+    return "Tracking successful! Redirecting...", 302, {"Location": "https://www.instagram.com/karthick_mageshan/?hl=en"}
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
