@@ -21,4 +21,4 @@ def track_ip():
     return "Tracking successful! Redirecting...", 302, {"Location": "https://www.google.com/"}
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
